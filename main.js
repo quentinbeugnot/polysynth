@@ -2,17 +2,10 @@
 
 //a polysynth composed of 6 Voices of Synth
 
-var synth = new Tone.Synth({
-    oscillator: {
-      type: 'triangle8'
-    },
-    envelope: {
-      attack: 2,
-      decay: 1,
-      sustain: 0.4,
-      release: 4
-    }
-  }).toMaster()
+const synth = new Tone.AMSynth().toMaster();
+
+synth.oscillator.type = "sine";
+synth.modulation.type = "sine"
   
   // --- Keyboard Presses ---
   
@@ -34,12 +27,64 @@ var synth = new Tone.Synth({
   const b = document.getElementById('b');
   
   const cup = document.getElementById('cup');
+
+  ///////////////////////
+  // Envelope sliders //
+  /////////////////////
   
-  const a_Slider = document.getElementById('attack');
-  const d_Slider = document.getElementById('decay');
-  const s_Slider = document.getElementById('sustain');
-  const r_Slider = document.getElementById('release');
-  
+  const carrier_attack_1 = document.getElementById('carrier_attack_1');
+  const carrier_decay_1 = document.getElementById('carrier_decay_1');
+  const carrier_sustain_1 = document.getElementById('carrier_sustain_1');
+  const carrier_release_1 = document.getElementById('carrier_release_1');
+
+  const modulator_attack_1 = document.getElementById('modulator_attack_1');
+  const modulator_decay_1 = document.getElementById('modulator_decay_1');
+  const modulator_sustain_1 = document.getElementById('modulator_sustain_1');
+  const modulator_release_1 = document.getElementById('modulator_release_1');
+
+  function Carrier_Attack_1_Update() {
+    synth.envelope.attack = this.value;
+    console.log(this.value);
+  }
+  function Carrier_Decay_1_Update() {
+    synth.envelope.decay = this.value;
+  }
+  function Carrier_Sustain_1_Update() {
+    synth.envelope.sustain = this.value;
+  }
+  function Carrier_Release_1_Update() {
+    synth.envelope.release = this.value;
+  }
+
+  function Modulator_Attack_1_Update() {
+    synth.modulationEnvelope.attack = this.value;
+  }
+  function Modulator_Decay_1_Update() {
+    synth.modulationEnvelope.decay = this.value;
+  }
+  function Modulator_Sustain_1_Update() {
+    synth.modulationEnvelope.sustain = this.value;
+  }
+  function Modulator_Release_1_Update() {
+    synth.modulationEnvelope.release = this.value;
+  }
+
+  carrier_attack_1.addEventListener('change', Carrier_Attack_1_Update);
+  carrier_decay_1.addEventListener('change', Carrier_Decay_1_Update);
+  carrier_sustain_1.addEventListener('change', Carrier_Sustain_1_Update);
+  carrier_release_1.addEventListener('change', Carrier_Release_1_Update);
+
+  modulator_attack_1.addEventListener('change', Modulator_Attack_1_Update);
+  modulator_decay_1.addEventListener('change', Modulator_Decay_1_Update);
+  modulator_sustain_1.addEventListener('change', Modulator_Sustain_1_Update);
+  modulator_release_1.addEventListener('change', Modulator_Release_1_Update);
+
+
+  ///////////////////////
+  // Octave selection //
+  /////////////////////
+
+
   window.onkeydown = function(event) {
     
      if (event.keyCode == 87) {
@@ -53,14 +98,6 @@ var synth = new Tone.Synth({
           }
      }
     
-    
-    // --- Change envelope with sliders ---
-    
-    a_Slider.addEventListener('change', Slider);
-    
-    function Slider(){
-      console.log(this.value);
-    }
     
     // --- Play notes on key press ---
     
