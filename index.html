@@ -3,24 +3,73 @@
 <html>
     <head>
         <link rel="stylesheet" href="main.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet"> 
     </head>
     <body>
             <div class="container-outer">
-                    <div class="flex-item">
+                    <div class="flex-item flex">
+                      <h1>Melonomicon</h1>
                     </div>
-                    <div class="flex-item">
+
+                    <div class="flex-item flex carrier-1 osc">
+                      <div>1  |  Carrier</div>
+                      <div>Vol.</div>
+                      <input id="carrier_vol_1" min=0.01 max=1 step="0.01" type="range">
+                      <div>Coarse</div>
+                      <input id="carrier_coarse_1" min=0.01 max=1 step="0.01" type="range">
+                      <div>Envelope</div>
                       <input id="carrier_attack_1" min=0.01 max=1 step="0.01" type="range">
                       <input id="carrier_decay_1" min=0.01 max=1 step="0.01" type="range">
                       <input id="carrier_sustain_1" min=0.01 max=1 step="0.01" type="range">
                       <input id="carrier_release_1" min=0.01 max=1 step="0.01" type="range">
                     </div>
-                    <div class="flex-item">
+
+                    <div class="flex-item flex modulator-1 osc">
+                      <div>Modulator</div>
+                      <div>Vol.</div>
+                      <input id="modulator_vol_1" min=0.01 max=1 step="0.01" type="range">
+                      <div>Coarse</div>
+                      <input id="modulator_coarse_1" min=0.01 max=1 step="0.01" type="range">
+                      <div>Envelope</div>
                       <input id="modulator_attack_1" min=0.01 max=1 step="0.01" type="range">
                       <input id="modulator_decay_1" min=0.01 max=1 step="0.01" type="range">
                       <input id="modulator_sustain_1" min=0.01 max=1 step="0.01" type="range">
                       <input id="modulator_release_1" min=0.01 max=1 step="0.01" type="range">
                     </div>
-                    <div class="flex-item">
+
+                    <div class="flex-item flex carrier-2 osc">
+                        <div>2  |  Carrier</div>
+                        <div>Vol.</div>
+                        <input id="carrier_vol_2" min=0.01 max=1 step="0.01" type="range">
+                        <div>Coarse</div>
+                        <input id="carrier_coarse_2" min=0.01 max=1 step="0.01" type="range">
+                        <div>Envelope</div>
+                        <input id="carrier_attack_2" min=0.01 max=1 step="0.01" type="range">
+                        <input id="carrier_decay_2" min=0.01 max=1 step="0.01" type="range">
+                        <input id="carrier_sustain_2" min=0.01 max=1 step="0.01" type="range">
+                        <input id="carrier_release_2" min=0.01 max=1 step="0.01" type="range">
+                      </div>
+
+                      <div class="flex-item flex modulator-2 osc">
+                          <div>Modulator</div>
+                          <div>Vol.</div>
+                          <input id="modulator_vol_2" min=0.01 max=1 step="0.01" type="range">
+                          <div>Coarse</div>
+                          <input id="modulator_coarse_2" min=0.01 max=1 step="0.01" type="range">
+                          <div>Envelope</div>
+                          <input id="modulator_attack_2" min=0.01 max=1 step="0.01" type="range">
+                          <input id="modulator_decay_2" min=0.01 max=1 step="0.01" type="range">
+                          <input id="modulator_sustain_2" min=0.01 max=1 step="0.01" type="range">
+                          <input id="modulator_release_2" min=0.01 max=1 step="0.01" type="range">
+                      </div>
+
+                    <div class="flex-item keyboard">
                         <div class="keyboard-flex-black">
                           <div class="placeholder-keys"></div>
                           <div id="cs" class="black-keys"></div>

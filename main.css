@@ -1,55 +1,110 @@
+:root {
+  /* --background: rgb(200,230,240); */
+  --background: rgb(255, 255, 255);
+  --key-size: 40px;
+  --key-spacingX: 20px;
+  --key-spacingY: 10px;
+  --keyboard-background: rgb(176, 203, 206);
+}
+
 body {
-    background-color: rgb(200,230,240);
-  }
+  background-color: var(--background);
+
+  /* font-family: 'Roboto Slab', serif; */
+  /* font-family: 'Nunito', sans-serif; */
+  font-family: 'Rubik', sans-serif;
+  /* font-family: 'Quicksand', sans-serif; */
+  /* font-family: 'Dosis', sans-serif; */
+  /* font-family: 'Space Mono', monospace; */
+}
   
-  .container-outer {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: center;
-    align-items: center
-  }
+.container-outer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center
+}
   
-  .container-outer > * {
-    flex: 1;
-  }
+.container-outer > * {
+  flex: 1;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.osc {
+  border: solid 3px rgba(0, 0, 0, 0.3);
+}
+
+.carrier-1 {
+  background-color: rgb(127, 255, 127);
+  border-radius: 20px;
+}
+
+.modulator-1 {
+  background-color: rgb(255, 246, 122);
+  border-radius: 20px;
+}
+
+.carrier-2 {
+  background-color: rgb(127, 219, 255);
+  border-radius: 20px;
+}
+
+.modulator-2 {
+  background-color: rgb(127, 136, 255);
+  border-radius: 20px;
+}
+
+.keyboard {
+  margin-top: 50px;
+  border: solid 3px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  background-color: var(--keyboard-background);
+  padding-top: 20px;
+}
   
-  .keyboard-flex-black {
-    display: flex;
-    margin-left: -15px;
+.keyboard-flex-black {
+  display: flex;
+  margin-left: -40px;
     
-  /*   border: 1px solid red; */
-  }
+/*   border: 1px solid red; */
+}
   
-  .keyboard-flex-white {
-    display: flex;
+.keyboard-flex-white {
+  display: flex;
     
-  /*   border: 1px solid red; */
-  }
+/*   border: 1px solid red; */
+}
   
-  .black-keys {
-    background-color: black;
-    height:20px;
-    width:20px;
-    border-radius: 50%;
-    margin:5px;
-  }
+.black-keys {
+  background-color: black;
+  height:var(--key-size);
+  width:var(--key-size);
+  border-radius: 50%;
+  margin: var(--key-spacingY) var(--key-spacingX);
+}
   
-  .white-keys {
-    background-color: white;
-    height:20px;
-    width:20px;
-    border-radius: 50%;
-    margin:5px;
-  }
+.white-keys {
+  background-color: white;
+  height:var(--key-size);
+  width:var(--key-size);
+  border-radius: 50%;
+  margin: var(--key-spacingY) var(--key-spacingX);
+}
   
-  .placeholder-keys {
-    visibility: hidden;
-    height:20px;
-    width:20px;
-    margin:5px;
-  }
+.placeholder-keys {
+  visibility: hidden;
+  height:var(--key-size);
+  width:var(--key-size);
+  margin: var(--key-spacingY) var(--key-spacingX);
+}
   
-  .key-pressed {
-    background-color: blue;
-  }
+.key-pressed {
+  background-color: blue;
+}

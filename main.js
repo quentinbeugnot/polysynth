@@ -100,6 +100,20 @@ synth.modulation.type = "sine"
     
     
     // --- Play notes on key press ---
+
+    let c_is_pressed = false;
+    let cs_is_pressed = false;
+    let d_is_pressed = false;
+    let ds_is_pressed = false;
+    let e_is_pressed = false;
+    let f_is_pressed = false;
+    let fs_is_pressed = false;
+    let g_is_pressed = false;
+    let gs_is_pressed = false;
+    let a_is_pressed = false;
+    let as_is_pressed = false;
+    let b_is_pressed = false;
+    let cup_is_pressed = false;
     
      if (event.keyCode == 81) {
        play_c();
