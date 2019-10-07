@@ -20,9 +20,9 @@
                     <div class="flex-item flex carrier-1 osc">
                       <div>1  |  Carrier</div>
                       <div>Vol.</div>
-                      <input id="carrier_vol_1" min=0.01 max=1 step="0.01" type="range">
+                      <input id="carrier_vol_1" min=0 max=10 step="0.01" type="range">
                       <div>Coarse</div>
-                      <input id="carrier_coarse_1" min=0.01 max=1 step="0.01" type="range">
+                      <input id="carrier_coarse_1" min=0 max=10 step="1" type="range">
                       <div>Envelope</div>
                       <input id="carrier_attack_1" min=0.01 max=1 step="0.01" type="range">
                       <input id="carrier_decay_1" min=0.01 max=1 step="0.01" type="range">
@@ -30,12 +30,19 @@
                       <input id="carrier_release_1" min=0.01 max=1 step="0.01" type="range">
                     </div>
 
+                    <div class="flex-item flex carrier-1 osc">
+                      <div>Vol. LFO amount</div>
+                      <input id="lfo_amount_car_vol_1" min=0 max=10 step="0.01" type="range">
+                      <div>Speed</div>
+                      <input id="lfo_speed_car_vol_1" min=0 max=10 step="1" type="range">
+                    </div>
+
                     <div class="flex-item flex modulator-1 osc">
                       <div>Modulator</div>
                       <div>Vol.</div>
-                      <input id="modulator_vol_1" min=0.01 max=1 step="0.01" type="range">
+                      <input id="modulator_vol_1" min=0 max=10 step="0.01" type="range">
                       <div>Coarse</div>
-                      <input id="modulator_coarse_1" min=0.01 max=1 step="0.01" type="range">
+                      <input id="modulator_coarse_1" min=0 max=10 step="1" type="range">
                       <div>Envelope</div>
                       <input id="modulator_attack_1" min=0.01 max=1 step="0.01" type="range">
                       <input id="modulator_decay_1" min=0.01 max=1 step="0.01" type="range">
@@ -43,7 +50,7 @@
                       <input id="modulator_release_1" min=0.01 max=1 step="0.01" type="range">
                     </div>
 
-                    <div class="flex-item flex carrier-2 osc">
+                    <!-- <div class="flex-item flex carrier-2 osc">
                         <div>2  |  Carrier</div>
                         <div>Vol.</div>
                         <input id="carrier_vol_2" min=0.01 max=1 step="0.01" type="range">
@@ -67,7 +74,7 @@
                           <input id="modulator_decay_2" min=0.01 max=1 step="0.01" type="range">
                           <input id="modulator_sustain_2" min=0.01 max=1 step="0.01" type="range">
                           <input id="modulator_release_2" min=0.01 max=1 step="0.01" type="range">
-                      </div>
+                      </div> -->
 
                     <div class="flex-item keyboard">
                         <div class="keyboard-flex-black">

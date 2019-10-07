@@ -2,10 +2,13 @@
 
 //a polysynth composed of 6 Voices of Synth
 
-const synth = new Tone.AMSynth().toMaster();
+const synth = new Tone.FMSynth().toMaster();
 
 synth.oscillator.type = "sine";
 synth.modulation.type = "sine"
+
+const lfo = new Tone.LFO("4n", 400, 4000);
+lfo.connect(synth.volume.value);
   
   // --- Keyboard Presses ---
   
@@ -32,19 +35,44 @@ synth.modulation.type = "sine"
   // Envelope sliders //
   /////////////////////
   
+  const carrier_vol_1 = document.getElementById('carrier_vol_1');
+  const lfo_amount_car_vol_1 = document.getElementById('lfo_amount_car_vol_1');
+  const lfo_speed_car_vol_1 = document.getElementById('lfo_speed_car_vol_1');
+
+  const carrier_coarse_1 = document.getElementById('carrier_coarse_1');
+
   const carrier_attack_1 = document.getElementById('carrier_attack_1');
   const carrier_decay_1 = document.getElementById('carrier_decay_1');
   const carrier_sustain_1 = document.getElementById('carrier_sustain_1');
   const carrier_release_1 = document.getElementById('carrier_release_1');
+
+  const modulator_vol_1 = document.getElementById('modulator_vol_1');
+  const modulator_coarse_1 = document.getElementById('modulator_coarse_1');
 
   const modulator_attack_1 = document.getElementById('modulator_attack_1');
   const modulator_decay_1 = document.getElementById('modulator_decay_1');
   const modulator_sustain_1 = document.getElementById('modulator_sustain_1');
   const modulator_release_1 = document.getElementById('modulator_release_1');
 
+  
+  function Carrier_Vol_1_Update() {
+    synth.volume.value = this.value;
+  }
+  function Lfo_Amount_Car_Vol_1_Update() {
+    lfo.amplitude = this.value;
+  }
+  function Lfo_Speed_Car_Vol_1_Update() {
+    lfo.frequency = this.value;
+  }
+
+  function Carrier_Vol_1_Update() {
+    synth.volume.value = this.value;
+  }
+  function Carrier_Coarse_1_Update() {
+    synth.harmonicity.value = this.value;
+  }
   function Carrier_Attack_1_Update() {
     synth.envelope.attack = this.value;
-    console.log(this.value);
   }
   function Carrier_Decay_1_Update() {
     synth.envelope.decay = this.value;
@@ -56,6 +84,12 @@ synth.modulation.type = "sine"
     synth.envelope.release = this.value;
   }
 
+  function Modulator_Vol_1_Update() {
+    synth.modulation.volume.value = this.value;
+  }
+  function Modulator_Coarse_1_Update() {
+    synth.modulationIndex.value = this.value;
+  }
   function Modulator_Attack_1_Update() {
     synth.modulationEnvelope.attack = this.value;
   }
@@ -69,11 +103,18 @@ synth.modulation.type = "sine"
     synth.modulationEnvelope.release = this.value;
   }
 
+  carrier_vol_1.addEventListener('change', Carrier_Vol_1_Update);
+  lfo_amount_car_vol_1.addEventListener('change', Lfo_Amount_Car_Vol_1_Update);
+  lfo_speed_car_vol_1.addEventListener('change', Lfo_Speed_Car_Vol_1_Update);
+
+  carrier_coarse_1.addEventListener('change', Carrier_Coarse_1_Update);
   carrier_attack_1.addEventListener('change', Carrier_Attack_1_Update);
   carrier_decay_1.addEventListener('change', Carrier_Decay_1_Update);
   carrier_sustain_1.addEventListener('change', Carrier_Sustain_1_Update);
   carrier_release_1.addEventListener('change', Carrier_Release_1_Update);
 
+  modulator_vol_1.addEventListener('change', Modulator_Vol_1_Update);
+  modulator_coarse_1.addEventListener('change', Modulator_Coarse_1_Update);
   modulator_attack_1.addEventListener('change', Modulator_Attack_1_Update);
   modulator_decay_1.addEventListener('change', Modulator_Decay_1_Update);
   modulator_sustain_1.addEventListener('change', Modulator_Sustain_1_Update);
