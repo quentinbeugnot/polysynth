@@ -5,10 +5,8 @@
 const synth = new Tone.FMSynth().toMaster();
 
 synth.oscillator.type = "sine";
-synth.modulation.type = "sine"
+synth.modulation.type = "sine";
 
-const lfo = new Tone.LFO("4n", 400, 4000);
-lfo.connect(synth.volume.value);
   
   // --- Keyboard Presses ---
   
@@ -142,19 +140,6 @@ lfo.connect(synth.volume.value);
     
     // --- Play notes on key press ---
 
-    let c_is_pressed = false;
-    let cs_is_pressed = false;
-    let d_is_pressed = false;
-    let ds_is_pressed = false;
-    let e_is_pressed = false;
-    let f_is_pressed = false;
-    let fs_is_pressed = false;
-    let g_is_pressed = false;
-    let gs_is_pressed = false;
-    let a_is_pressed = false;
-    let as_is_pressed = false;
-    let b_is_pressed = false;
-    let cup_is_pressed = false;
     
      if (event.keyCode == 81) {
        play_c();
@@ -227,6 +212,26 @@ lfo.connect(synth.volume.value);
     as.classList.remove('key-pressed');
     b.classList.remove('key-pressed');
     cup.classList.remove('key-pressed');
+
+    if (event.keyCode == 81) {
+      if(octave == 4){
+        synth.triggerRelease("C4");
+        }else if(octave == 0){
+        synth.triggerRelease("C0");
+        }else if(octave == 1){
+        synth.triggerRelease("C1");
+        }else if(octave == 2){
+        synth.triggerRelease("C2");
+        }else if(octave == 3){
+        synth.triggerRelease("C3");
+        }else if(octave == 5){
+        synth.triggerRelease("C5");
+        }else if(octave == 6){
+        synth.triggerRelease("C6");
+        }else if(octave == 7){
+        synth.triggerRelease("C7");
+        }
+    }
   }
   
   // --- Clicking the visual keyboard ---
@@ -299,27 +304,49 @@ lfo.connect(synth.volume.value);
     as.classList.remove('key-pressed');
     b.classList.remove('key-pressed');
     cup.classList.remove('key-pressed');
+
+  }
+
+  c.onmouseup = function(event) {
+    if(octave == 4){
+      synth.triggerRelease("C4");
+      console.log('c released');
+      }else if(octave == 0){
+      synth.triggerRelease("C0");
+      }else if(octave == 1){
+      synth.triggerRelease("C1");
+      }else if(octave == 2){
+      synth.triggerRelease("C2");
+      }else if(octave == 3){
+      synth.triggerRelease("C3");
+      }else if(octave == 5){
+      synth.triggerRelease("C5");
+      }else if(octave == 6){
+      synth.triggerRelease("C6");
+      }else if(octave == 7){
+      synth.triggerRelease("C7");
+      }
   }
   
   // --- Playing the notes ---
   
   function play_c(){
        if(octave == 4){
-       synth.triggerAttackRelease("C4", "8n");
+       synth.triggerAttack("C4");
        }else if(octave == 0){
-       synth.triggerAttackRelease("C0", "8n");
+       synth.triggerAttack("C0");
        }else if(octave == 1){
-       synth.triggerAttackRelease("C1", "8n");
+       synth.triggerAttack("C1");
        }else if(octave == 2){
-       synth.triggerAttackRelease("C2", "8n");
+       synth.triggerAttack("C2");
        }else if(octave == 3){
-       synth.triggerAttackRelease("C3", "8n");
+       synth.triggerAttack("C3");
        }else if(octave == 5){
-       synth.triggerAttackRelease("C5", "8n");
+       synth.triggerAttack("C5");
        }else if(octave == 6){
-       synth.triggerAttackRelease("C6", "8n");
+       synth.triggerAttack("C6");
        }else if(octave == 7){
-       synth.triggerAttackRelease("C7", "8n");
+       synth.triggerAttack("C7");
        }
   }
   
@@ -561,5 +588,3 @@ lfo.connect(synth.volume.value);
        synth.triggerAttackRelease("C8", "8n");
        }
   }
-  
-  

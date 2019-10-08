@@ -10,7 +10,10 @@
         <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet"> 
-    </head>
+        <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^2/webcomponents-bundle.js"></script>
+        <script src="https://unpkg.com/tone"></script>
+        <script src="https://unpkg.com/@tonejs/ui"></script>
+      </head>
     <body>
             <div class="container-outer">
                     <div class="flex-item flex">
@@ -20,14 +23,14 @@
                     <div class="flex-item flex carrier-1 osc">
                       <div>1  |  Carrier</div>
                       <div>Vol.</div>
-                      <input id="carrier_vol_1" min=0 max=10 step="0.01" type="range">
+                      <input id="carrier_vol_1" min=0 max=10 step="0.01" value="5" type="range">
                       <div>Coarse</div>
-                      <input id="carrier_coarse_1" min=0 max=10 step="1" type="range">
+                      <input id="carrier_coarse_1" min=0 max=10 step="1" value="0" type="range">
                       <div>Envelope</div>
-                      <input id="carrier_attack_1" min=0.01 max=1 step="0.01" type="range">
-                      <input id="carrier_decay_1" min=0.01 max=1 step="0.01" type="range">
-                      <input id="carrier_sustain_1" min=0.01 max=1 step="0.01" type="range">
-                      <input id="carrier_release_1" min=0.01 max=1 step="0.01" type="range">
+                      <input id="carrier_attack_1" min=0.01 max=1 step="0.01" value="0.01" type="range">
+                      <input id="carrier_decay_1" min=0.01 max=1 step="0.01" value="0.5" type="range">
+                      <input id="carrier_sustain_1" min=0 max=1 step="0.01" value="0" type="range">
+                      <input id="carrier_release_1" min=0.01 max=1 step="0.01" value="0.3" type="range">
                     </div>
 
                     <div class="flex-item flex carrier-1 osc">
